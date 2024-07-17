@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hitung Jumlah Pengunjung Supermarket</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hitung Jumlah Pengunjung Supermarket</h1>
+    <img src="{{ url_for('video_feed') }}" alt="Video Stream">
+</body>
+</html>

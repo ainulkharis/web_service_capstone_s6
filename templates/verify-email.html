@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifikasi Alamat Email</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .content {
+            padding: 20px 0;
+        }
+
+        .content p {
+            margin: 0 0 10px;
+        }
+
+        .button {
+            display: block;
+            padding: 10px 20px;
+            margin: 20px auto;
+            background-color: #00ccff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            width: fit-content;
+        }
+
+        .button:hover {
+            background-color: #2bd5ff;
+        }
+
+        .footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Verifikasi Alamat Email Anda</h1>
+        </div>
+        <div class="content">
+            <p>Terima kasih telah mendaftar! Silakan klik tombol di bawah ini untuk memverifikasi alamat email Anda pada pendaftaran akun MallVisTrack App.</p>
+            <a href="{{ confirmation_url }}" class="button">Verifikasi Email</a>
+            <p>Jika Anda merasa tidak membuat akun, harap abaikan email ini!!!</p>
+        </div>
+        <div class="footer">
+            <p>Copyright &copy; 2024 MallVisTrack App.</p>
+        </div>
+    </div>
+</body>
+</html>
