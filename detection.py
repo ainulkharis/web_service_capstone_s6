@@ -12,7 +12,7 @@ app = Flask(__name__)
 # Setup MongoDB
 client = MongoClient("mongodb://localhost:27017/")
 db = client.supermarket
-collection = db.detections
+collection = db.visitors
 
 model = YOLO("model/best.pt")
 region_of_interest = [(300, 20), (302, 680), (280, 680), (280, 20)]

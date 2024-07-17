@@ -7,7 +7,7 @@ import calendar
 # Koneksi ke MongoDB
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client["supermarket"]
-collection = db["pengunjung"]
+collection = db["visitors"]
 
 # Fetch data dari MongoDB
 data = list(collection.find({}, {'_id': 0, 'gender': 1, 'days': 1, 'date': 1, 'total': 1}))
