@@ -24,13 +24,14 @@ def create_bar_chart(df, title):
     fig = px.bar(df, x='date', y='total', title=title)
     st.plotly_chart(fig)
 
-# Fungsi untuk membuat grafik batang total pengunjung berdasarkan bulan
+# Fungsi untuk membuat pie chart total pengunjung berdasarkan bulan
 def create_total_visitors_chart(df, title):
     gender_count = df[['female', 'male']].sum().reset_index().rename(columns={0: 'Count', 'index': 'Gender'})
-    fig = px.bar(gender_count, x='Gender', y='Count', title=title)
-    fig.update_layout(showlegend=False)
+    fig = px.pie(gender_count, names='Gender', values='Count', title=title, hole=0.4)
+    fig.update_traces(textinfo='percent+label', textfont_size=20)
+    fig.update_layout(title_text=title, annotations=[dict(text='Gender', x=0.5, y=0.5, font_size=20, showarrow=False),])
+    
     st.plotly_chart(fig)
-    st.table(gender_count)
 
 # Fungsi untuk membuat grafik garis jumlah pengunjung wanita per hari di bulan yang dipilih
 def create_female_daily_chart(df, title):
