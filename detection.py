@@ -49,15 +49,15 @@ def count_object():
                             tracked_ids.add(track_id)
                             direction = "IN" if (box[0] - prev_position[0]) * (counter.counting_region.centroid.x - prev_position[0]) > 0 else "OUT"
                             
-                            if cls == 0:  # Assuming class 0 is Female
+                            if cls == 0:
                                 female_count += 1
-                            elif cls == 1:  # Assuming class 1 is Male
+                            elif cls == 1:
                                 male_count += 1
                             
                             detection = {
                                 'gender': f"Female: {female_count}, Male: {male_count}",
                                 'days': datetime.datetime.now().strftime('%A'),
-                                'date': datetime.datetime.now().date().isoformat(),  # Convert to string
+                                'date': datetime.datetime.now().date().isoformat(),
                                 'total': male_count + female_count
                             }
                             collection.insert_one(detection)
