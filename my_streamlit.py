@@ -1,13 +1,13 @@
+from pymongo import MongoClient
 import streamlit as st
 import pandas as pd
-import pymongo
 import plotly.express as px
 import calendar
 
 # Koneksi ke MongoDB
-client = pymongo.MongoClient("mongodb://localhost:27017/")
-db = client["supermarket"]
-collection = db["visitors"]
+client = MongoClient("mongodb://localhost:27017/")
+db = client.supermarket
+collection = db.detections
 
 # Fetch data dari MongoDB
 data = list(collection.find({}, {'_id': 0, 'gender': 1, 'days': 1, 'date': 1, 'total': 1}))
